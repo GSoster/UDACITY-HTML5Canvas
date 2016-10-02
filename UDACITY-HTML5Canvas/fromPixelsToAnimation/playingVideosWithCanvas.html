@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>
+<body>
+  <video id='v' controls loop src='What_Happened_1901.mp4'></video>
+  <canvas id='c' width='600' height='375'></canvas>
+  <script>
+    var canvas = document.querySelector('canvas');
+    var ctx = canvas.getContext('2d');
+
+    //waits for the content to be loaded
+    document.addEventListener('DOMContentLoaded', function(){
+      var v = document.querySelector('#v');
+      var canvas = document.querySelector('#c');
+      var ctx = canvas.getContext('2d');
+      //when the video has been loaded, set the canvas size to be the same as the video
+      v.addEventListener('loadedmetadata', function(){
+        canvas.width = this.videoWidth;
+        canvas.height = this.videoHeight;
+      });
+
+      //draws on canvas the exactly same frame being displayed by the video tag
+      var draw = function (){
+        canvas.getContext('2d').drawImage(v, 0, 0);
+      };
+      //activates the draw function when the video is put to play
+      v.addEventListener('play', function(){
+        if(v.paused || v.ended) return;
+        draw();
+      });
+
+    });
+
+  </script>
+</body>
+</html>
