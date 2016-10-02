@@ -15,7 +15,10 @@
       console.log('Loaded image');
       //since images are loaded asynchronously we will only put them on canvas after it (the image) has being loaded
       ctx.drawImage(image, 0, 0, c.width, c.height);
-    };    
+      //saving image
+      var savedImage = c.toDataURL();//saves the image as a datastring
+      window.open(savedImage);//opens the saved image on a new window.
+    };
   </script>
 </body>
 </html>
