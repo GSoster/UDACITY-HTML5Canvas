@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>
+<body>
+  <canvas id='c' width='500' height='500'></canvas>
+  <script>
+/**
+* 1 -  Draw the phrase "CANVAS MEMES!" with iconic meme typography
+* 2 - Your text must use letters that have a black outline and white fill.
+* 3 - Use impact font, size 36pt.
+* 4- The black outline should have a width of 3px.
+*/
+
+    var c = document.querySelector('#c');
+    var ctx = c.getContext('2d');
+
+    ctx.font = "36pt Impact";
+    ctx.fillStyle = 'white';
+    ctx.fillText('CANVAS MEMES!', 50, 60);
+
+    ctx.strokeStyle = 'black';
+    //ctx.lineWidth = 3;
+    ctx.strokeText('CANVAS MEMES!', 50, 60);
+
+  </script>
+</body>
+</html>
