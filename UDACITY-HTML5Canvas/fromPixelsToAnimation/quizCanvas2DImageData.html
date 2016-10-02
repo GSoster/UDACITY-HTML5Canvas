@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>
+<body>
+  <canvas id='c' width='200' height='200'></canvas>
+  <script>
+    var canvas = document.querySelector('#c');
+    var ctx = canvas.getContext('2d');
+
+    var imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    //retrieve the pixels
+    //each pixel has 4 components (red, green, blue, alpha) so:
+    var numPixels =    imgData.data.length / 4;
+    for(var i = 0; i < numPixels; i++){
+      if(i%10 === 0){
+        //one pixel = [red (index 0), green (index 1), blue (index 2), alpha (index 3)]
+        imgData.data[i * 4 + 1] = 255;//green (index 1)
+        imgData.data[i * 4 + 3] = 255;//alpha (index 3)
+      }
+    }
+
+    console.log(imgData.data);
+    ctx.putImageData(imgData, 0, 0);
+  </script>
+</body>
+</html>
