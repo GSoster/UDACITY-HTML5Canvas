@@ -23,6 +23,10 @@
       //draws on canvas the exactly same frame being displayed by the video tag
       var draw = function (){
         canvas.getContext('2d').drawImage(v, 0, 0);
+        //####### ATENTION! ##########
+        //it is the line below that makes the canvas be updated and display
+        //the images as a video.
+        requestAnimationFrame(draw);
       };
       //activates the draw function when the video is put to play
       v.addEventListener('play', function(){
