@@ -1,0 +1,21 @@
+ctx.save();
+ctx.restore();
+The canvas state can store:
+
+The current transformation matrix (rotation, scaling, translation)
+strokeStyle
+fillStyle
+font
+globalAlpha
+lineWidth
+lineCap
+lineJoin
+miterLimit
+shadowOffsetX
+shadowOffsetY
+shadowBlur
+shadowColor
+globalCompositeOperation
+textAlign
+textBaseline
+The current clipping region
